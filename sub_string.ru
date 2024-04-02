@@ -2,7 +2,7 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 
 def substrings(string, dictionary)
   word_count = Hash.new(0)
-  string_array = string.downcase.gsub(/[!@#$%^&*()-=_+|;':",.<>?']/,'').split
+  string_array = string.downcase.gsub(/[[:punct:]]/,'').split
 
 
   dictionary.each do |dict_item|
