@@ -1,11 +1,17 @@
 def bubble_sort(array)
-  array.each_with_index do |value1, index1|
-    array.each_with_index do |value2, index2|
-      if value1 < value2
-        array[index1], array[index2] = array[index2], array[index1]
+  iteration = array.length
+  (iteration).times do
+    swapped = true
+    for i in 1...iteration do
+      if array[i-1]> array[i]
+        array[i-1],array[i] = array[i],array[i-1]
+        swapped = true
       end
     end
+    iteration-=1
   end
+  array
 end
-array_list = [4,3,3,78,2,0,2]
-puts bubble_sort(array_list)
+
+array_list = [4,3,78,2,0,2,1,2]
+p bubble_sort(array_list)
