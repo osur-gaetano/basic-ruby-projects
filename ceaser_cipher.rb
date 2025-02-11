@@ -4,7 +4,7 @@ def shift_character(character, shift)
   return character unless character.match?(/[A-Za-z]/)
 
   base_position = character.upcase == character ? 'A'.ord : 'a'.ord
-  ((character.ord - base_position + shift) % 26 + base_position).chr
+  (((character.ord - base_position + shift) % 26) + base_position).chr
 end
 
 def ceaser_cipher(word, shift)
